@@ -1,0 +1,188 @@
+@font-face {
+  font-family: "quebec";
+  src: url("./assets/fonts/Quebec-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "quebec";
+  src: url("./assets/fonts/Quebec-Italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "quebec";
+  src: url("./assets/fonts/Quebec-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "quebec";
+  src: url("./assets/fonts/Quebec-BoldItalic.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+audio {
+  width: 100%;
+  display: block;
+  border-radius: 6px 6px 0 0;
+  
+  /* macOS Safari 
+  background: #000;
+  filter: contrast(1.5);
+  /* macOS Firefox 
+  background: #000;
+  filter: grayscale(1); 
+  
+  /* macOS Chrome */
+  background: #f1f3f4;
+  filter: invert(1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #3f0000;
+  font: 15px/1.5 "quebec", sans-serif;
+  display: flex;
+  margin: 0;
+  height: 100vh; /* Full viewport height */
+}
+
+.left-container, .right-container {
+  width: 50%; /* Each container takes up half the width */
+  height: 100%; /* Full height of the viewport */
+}
+
+.left-container {
+  position: relative;
+  width: 50%;
+  height: calc(100% - 16px);
+  border: 8px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none; /* Hide all images initially */
+  object-fit: cover; /* Cover the container while maintaining aspect ratio */
+  object-position: center; /* Center the image within the element */
+}
+
+.slide.active {
+  display: block; /* Show active image */
+}
+
+.navigation {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #717171; /* Active dot color */
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 16px);
+  border: 8px solid #000;
+}
+
+ol {
+  width: 100%; /* Full width of the right-container */
+  height: 100%; /* Full height of the right-container */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  list-style: none; /* Remove bullet points */
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  width: 100%; /* Each li takes up full width of ol */
+}
+
+h1 {
+  font-size: 100%;
+  text-decoration: underline;
+  margin-bottom: 2rem;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+li + li a {
+  box-shadow:inset 0 1px 0 #00000022;
+}
+
+li a {
+  background:#fff;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.5em 0.7em;
+}
+
+li:not(.active) a:hover {
+  background: #00006f;
+  color: #f9f9f9;
+}
+
+.active a {
+  font-weight: bold;
+  background: #000054;
+  color: #f9f9f9;
+}
+
+.active a:hover {
+  font-style: italic;
+}
+
+.active a:after {
+  font-style: normal;
+  opacity:.4;
+  content: "\266B";
+  margin-left: 0.4em;
+  float: right;
+}
+
+@media (max-width: 600px) {
+  body {
+    flex-direction: column; /* Stack vertically on small screens */
+    height: auto; /* Adjust height to be auto to contain both containers */
+  }
+
+  .left-container, .right-container {
+    width: 100%; /* Each container takes full width */
+    height: 50vh; /* Half of the viewport height */
+  }
+}
