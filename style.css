@@ -1,27 +1,27 @@
 @font-face {
   font-family: "quebec";
-  src: url("./assets/fonts/Quebec-Regular.otf") format("opentype");
+  src: url("./assets/fonts/quebec-regular-webfont.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "quebec";
-  src: url("./assets/fonts/Quebec-Italic.otf") format("opentype");
+  src: url("./assets/fonts/quebec-italic-webfont.woff2") format("woff2");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
   font-family: "quebec";
-  src: url("./assets/fonts/Quebec-Bold.otf") format("opentype");
+  src: url("./assets/fonts/quebec-bold-webfont.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "quebec";
-  src: url("./assets/fonts/Quebec-BoldItalic.otf") format("opentype");
+  src: url("./assets/fonts/quebec-italic-webfont.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
 }
@@ -29,7 +29,6 @@
 audio {
   width: 100%;
   display: block;
-  border-radius: 6px 6px 0 0;
   
   /* macOS Safari 
   background: #000;
@@ -40,7 +39,7 @@ audio {
   
   /* macOS Chrome */
   background: #f1f3f4;
-  filter: invert(1);
+  /* filter: invert(1); */
 }
 
 * {
@@ -49,8 +48,9 @@ audio {
 }
 
 body {
-  background: #3f0000;
-  font: 15px/1.5 "quebec", sans-serif;
+  font-family: "quebec", sans-serif;
+  line-height: 1.5;
+  font-size: 120%;
   display: flex;
   margin: 0;
   height: 100vh; /* Full viewport height */
@@ -64,8 +64,8 @@ body {
 .left-container {
   position: relative;
   width: 50%;
-  height: calc(100% - 16px);
-  border: 8px solid #000;
+  /* height: calc(100% - 16px);
+  border: 8px solid #000; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,8 +110,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100% - 16px);
-  border: 8px solid #000;
+  /* height: calc(100% - 16px);
+  border: 8px solid #000; */
 }
 
 ol {
@@ -169,7 +169,7 @@ li:not(.active) a:hover {
 
 .active a:after {
   font-style: normal;
-  opacity:.4;
+  opacity: 0.6;;
   content: "\266B";
   margin-left: 0.4em;
   float: right;
